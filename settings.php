@@ -4,10 +4,18 @@ defined('MOODLE_INTERNAL') || die;
 if ($hassiteconfig) {
     $settings = new admin_settingpage('local_varkassign', get_string('pluginname', 'local_varkassign'));
 
+    // 1. العنوان والوصف الأصلي الخاص بالإضافة
     $settings->add(new admin_setting_heading(
         'local_varkassign/header',
         get_string('settings_heading', 'local_varkassign'),
         get_string('settings_desc', 'local_varkassign')
+    ));
+
+    // 2. 💡 صندوق التعليمات الجديد (دليل الاستخدام)
+    $settings->add(new admin_setting_heading(
+        'local_varkassign/instructions',
+        get_string('instructions_heading', 'local_varkassign'),
+        get_string('instructions_desc', 'local_varkassign')
     ));
 
     // إعداد اسم مجموعة Visual
